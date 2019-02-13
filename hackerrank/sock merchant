@@ -1,0 +1,24 @@
+//https://www.hackerrank.com/challenges/sock-merchant/
+//John works at a clothing store. He has a large pile of socks that he must pair by color for sale. 
+//Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.
+
+// Complete the sockMerchant function below.
+int sockMerchant(int n, vector<int> ar) {
+
+int pair=0;
+set<int> socks;
+
+for(auto it=ar.begin();it!=ar.end();it++){
+
+    if(socks.find(*it)==socks.end())
+    socks.insert(*it);
+    else{
+        pair++;
+        socks.erase(*it);
+
+    }
+}
+return pair;
+
+
+}
